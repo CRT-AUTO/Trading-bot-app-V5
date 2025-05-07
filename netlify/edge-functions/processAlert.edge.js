@@ -686,9 +686,9 @@ async function processCloseTrade(supabase, bot, webhook, alertData, apiKey, requ
   // 2. If it's explicitly a manual/signal close
   // 3. If it's a partial close
   // Otherwise, assume TP/SL was hit and Bybit handled the closure
-  const shouldExecuteOrder = !openTrade.stop_loss && !openTrade.take_profit || 
-                           closeReason === 'signal' || 
-                           closeReason === 'partial_close';
+  const shouldExecuteOrder = (closeReason === 'signal') ||
+                           (closeReason === 'partial_close') ||
+                           (!openTrade.stop_loss && !openTrade.take_profit);
   
   if (shouldExecuteOrder) {
     console.log("No TP/SL was set or manual close requested, executing close order");
