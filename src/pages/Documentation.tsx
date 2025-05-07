@@ -263,6 +263,7 @@ if strategy.position_size == 0 and strategy.position_size[1] < 0
             <ol className="list-decimal list-inside text-sm text-blue-700">
               <li className="mb-2">Add this code at the end of your TradingView strategy</li>
               <li className="mb-2">Replace <code>"SUPER15"</code> with your bot's name</li>
+              <li className="mb-2">Replace <code>"none"</code> with "signal" and the bot will execute the close order</li>
               <li className="mb-2">Ensure your strategy defines <code>lockedLongTP</code>, <code>longStopFixed</code>, <code>lockedShortTP</code>, and <code>shortStopFixed</code> variables</li>
               <li className="mb-2">Adapt conditional checks based on your strategy's entry/exit logic</li>
               <li>Set alerts to trigger "Once Per Bar Close" for consistent execution</li>
