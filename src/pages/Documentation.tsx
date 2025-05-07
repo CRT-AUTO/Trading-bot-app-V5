@@ -56,6 +56,7 @@ if strategy.position_size > 0 and strategy.position_size[1] <= 0 and not na(lock
               "\"stopLoss\": " + str.tostring(longStopFixed, format.mintick) + ", " +
               "\"takeProfit\": " + str.tostring(lockedLongTP, format.mintick) + ", " +
               "\"state\": \"open\", " +
+              "\"closeReason\": \"none\", " +
               "\"bot_name\": \"-----\", " +
               "\"webhook_url\": \"-----\"" +
               "}"
@@ -68,6 +69,7 @@ if strategy.position_size == 0 and strategy.position_size[1] > 0
               "\"quantity\": \"" + str.tostring(strategy.position_size[1]) + "\", " +
               "\"price\": \"" + str.tostring(close, format.mintick) + "\", " +
               "\"state\": \"close\", " +
+              "\"closeReason\": \"none\", " +
               "\"bot_name\": \"-----\", " +
               "\"webhook_url\": \"-----\"" +
               "}"
@@ -84,6 +86,7 @@ if strategy.position_size < 0 and strategy.position_size[1] >= 0 and not na(lock
               "\"stopLoss\": " + str.tostring(shortStopFixed, format.mintick) + ", " +
               "\"takeProfit\": " + str.tostring(lockedShortTP, format.mintick) + ", " +
               "\"state\": \"open\", " +
+              "\"closeReason\": \"none\", " +
               "\"bot_name\": \"-----\", " +
               "\"webhook_url\": \"-----\"" +
               "}"
@@ -96,6 +99,7 @@ if strategy.position_size == 0 and strategy.position_size[1] < 0
               "\"quantity\": \"" + str.tostring(strategy.position_size[1]) + "\", " +
               "\"price\": \"" + str.tostring(close, format.mintick) + "\", " +
               "\"state\": \"close\", " +
+              "\"closeReason\": \"none\", " +
               "\"bot_name\": \"-----\", " +
               "\"webhook_url\": \"-----\"" +
               "}"
